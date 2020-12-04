@@ -1,0 +1,2 @@
+//run php from any folder after you install apache and php cli
+php -S localhost:8000
