@@ -24,7 +24,12 @@ class Bootstrap{
 
 	public function createController(){
 		// Check Class
+		echo  '<br/>before if : '.$this->controller;
+
 		if(class_exists($this->controller)){
+			echo  '<br/>after if : '.class_exists($this->controller);
+			echo  '<br/>parents : '.print_r(class_parents($this->controller));
+
 			$parents = class_parents($this->controller);
 			// Check Extend
 			if(in_array("Controller", $parents)){
