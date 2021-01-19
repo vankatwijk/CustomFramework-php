@@ -27,10 +27,12 @@ class Database {
         }
     }
 
+    //prepare the sql query
     public function query($query){
         $this->stmt = $this->dbh->prepare($query);
     }
 
+    //replace any variables in the sql query before executing
     public function bind($param,$value,$type = null){
         if(is_null($type)){
             switch(true){
@@ -49,10 +51,12 @@ class Database {
         $this->stmt->bindValue($param, $value, $type);
     }
 
+    //execute the sql query
     public function execute(){
         return $this->stmt->execute();
     }
 
+    //get the result in an associated array
     public function resultset(){
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
