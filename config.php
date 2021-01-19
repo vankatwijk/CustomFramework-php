@@ -7,5 +7,5 @@ define("DB_PASS", "justconnect1");
 define("DB_NAME", "shareboard");
 
 //Define URL
-define("ROOT_PATH", "/shareboard");
+define("ROOT_PATH", "/CustomFramework-php/");
 define("ROOT_URL","http://localhost/CustomFramework-php/");
