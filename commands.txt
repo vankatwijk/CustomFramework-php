@@ -1,2 +1,2 @@
 //run php from any folder after you install apache and php cli
-php -S localhost:8000
+php -S localhost:8000 // does not use .htaccess, so framework will not work
