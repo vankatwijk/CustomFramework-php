@@ -3,20 +3,31 @@ require 'classes/Database.php';
 
 //uses our pdo database class
 $database = new Database;
-$database->query('SELECT * FROM posts');
-$rows = $database->resultset();
-print_r($rows);
 
 //sanitize the inputes from ex: $_POST['title'], ensures everything is a string
 $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 if($post['submit']){
-    echo 'SUBMITTED';
-
     $title = $post['title'];
     $body = $post['body'];
 
+    //insert new post into the db
+    $database->query('INSERT INTO posts (title, body) VALUES(:title, :body)');
+    $database->bind(':title', $title);
+    $database->bind(':body', $body);
+    $database->execute();
+
+    echo $database->lastInsertId();
+    if($database->lastInsertId()){
+        echo '<p>Post Added</p>';
+    }
 }
+
+//get all post from the database
+$database->query('SELECT * FROM posts');
+$rows = $database->resultset();
+//print_r($rows);
+
 
 ?>
 

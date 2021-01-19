@@ -56,6 +56,11 @@ class Database {
         return $this->stmt->execute();
     }
 
+    //get last insert id
+    public function lastInsertId(){
+        $this->dbh->lastInsertId();
+    }
+
     //get the result in an associated array
     public function resultset(){
         $this->execute();
