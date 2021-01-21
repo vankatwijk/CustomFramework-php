@@ -5,10 +5,6 @@ class ShareModel extends Model{
         $this->query('SELECT * FROM shares ORDER BY create_date');
         $rows = $this->resultSet();
 
-        echo '<br><br>model data<br><br>';
-        print_r($rows);
-        echo '<br><br>model data<br><br>';
-
         return $rows;
     }
 

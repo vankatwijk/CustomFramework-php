@@ -41,6 +41,8 @@
                     <li><a class="nav-link" href="<?php echo ROOT_URL; ?>">Home</a></li>
                     <li><a class="nav-link" href="<?php echo ROOT_URL; ?>shares">Shares</a></li>
                     <li><a class="nav-link" href="<?php echo ROOT_URL; ?>users">Users</a></li>
+                    <li><a class="nav-link" href="<?php echo ROOT_URL; ?>users/register">Register</a></li>
+                    <li><a class="nav-link" href="<?php echo ROOT_URL; ?>users/login">Login</a></li>
 
                 </ul>
                 <form class="d-flex">
