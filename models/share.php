@@ -12,4 +12,8 @@ class ShareModel extends Model{
         return $rows;
     }
 
+    public function add(){
+        return;
+    }
+
 }
