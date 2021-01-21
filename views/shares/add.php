@@ -3,7 +3,7 @@
         <h3 class="panel-title">Share Something</h3>
     </div>
     <div class="panel-body">
-        <form action="">
+        <form method="post" action="<?php $_SERVER['PHP_SELF'];?>">
             <div class="form-group">
                 <label for="title">Share Title</label>
                 <input type="text" name="title" class="form-control">
@@ -17,6 +17,7 @@
                 <input type="text" name="link" class="form-control">
             </div>
             <input class="btn btn-primary" name="submit" type="submit" value="submit" />
+            <a class="btn btn-danger" href="<?php echo ROOT_PATH?>shares">Cancel</a>
         </form>
     </div>
 </div>
