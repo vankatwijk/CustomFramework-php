@@ -16,7 +16,7 @@ class ShareModel extends Model{
         // sanitize POST
         $post = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
 
-        if($post['submit']){
+        if(isset($post['submit'])){
 
             $this->query('INSERT INTO shares (title,body,link, user_id) VALUES(:title,:body,:link, :user_id)');
             $this->bind(':title',$post['title']);
@@ -27,8 +27,6 @@ class ShareModel extends Model{
             $this->execute();
 
             //verify
-            echo PDO::lastInsertId() .'lastid';
-
             if($this->lastInsertId()){
                 //Redirect
                 header('Location: '.ROOT_URL.'shares');

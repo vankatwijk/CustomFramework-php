@@ -37,6 +37,10 @@ abstract class Model{
         return $this->stmt->execute();
     }
 
+    public function rollback(){
+        return $this->stmt->rollback();
+    }
+
     public function resultSet(){
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
