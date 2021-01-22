@@ -1,9 +1,9 @@
 <?php
 
 class users extends Controller{
-    protected function Index(){
+    protected function register(){
         $viewmodel = new UserModel();
-        $this->ReturnView($viewmodel->Index(), true);
+        $this->returnView($viewmodel->register(), true);
     }
 }
 ?>
